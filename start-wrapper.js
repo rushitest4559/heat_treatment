@@ -16,7 +16,7 @@ function errorLog(message, err = null) {
 
 async function waitForServer(url, timeout = 90000, interval = 3000) {
   const start = Date.now();
-  log(`Waiting for Directus to respond at ${url} (timeout: ${timeout/1000}s)`);
+  log(`Waiting for Directus to respond at ${url} (timeout: ${timeout / 1000}s)`);
 
   while (Date.now() - start < timeout) {
     try {
@@ -31,7 +31,7 @@ async function waitForServer(url, timeout = 90000, interval = 3000) {
     await new Promise(r => setTimeout(r, interval));
   }
 
-  throw new Error(`Directus did not become ready within ${timeout/1000} seconds`);
+  throw new Error(`Directus did not become ready within ${timeout / 1000} seconds`);
 }
 
 async function main() {
@@ -84,7 +84,13 @@ async function main() {
     log(`Using Directus URL: ${directusUrl}`);
     log(`Token is present (length: ${directusToken.length})`);
 
-    const syncCommand = `npx directus-sync push --directus-url "${directusUrl}" --directus-token "${directusToken}"`;
+    const syncCommand = [
+      'npx directus-sync push',
+      `--directus-url "${directusUrl}"`,
+      `--directus-token "${directusToken}"`,
+      `--dump-path "./sync"`,               // ← tell it where your committed dump is
+      `--only-collections settings,roles,permissions`  // optional but recommended to skip schema if not needed
+    ].join(' ');
 
     log(`Executing: ${syncCommand.replace(directusToken, '***')}`); // hide token in logs
 
