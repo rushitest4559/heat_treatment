@@ -6,14 +6,15 @@
   "type": "module",
   "scripts": {
     "build": "npm install",
-    "start": "npx directus schema apply ./snapshot.yaml --yes && npx directus start",
-    "local": "npx directus start"
+    "start": "node start-wrapper.js",
+    "local": "npx directus start",
+    "snapshot": "npx directus schema snapshot ./snapshot.yaml --yes && npx directus-sync pull"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "directus": "^11.15.2",
-    "pg": "^8.18.0"
+    "directus": "^11.15.4",
+    "directus-extension-sync": "^3.0.5",
+    "directus-sync": "^3.4.1",
+    "pg": "^8.18.0",
+    "node-fetch": "^3.3.2"
   }
 }
