@@ -66,33 +66,33 @@ async function main() {
     });
 
     // 4. Wait until local API is responding
-    // await waitForServer('http://localhost:8055');
+    await waitForServer('http://localhost:8055');
 
     // 5. Apply configuration sync (push local dump to running instance)
-    // log('Starting configuration sync (directus-sync push)...');
+    log('Starting configuration sync (directus-sync push)...');
 
-    // const directusUrl = process.env.DIRECTUS_URL || process.env.PUBLIC_URL;
-    // const directusToken = process.env.DIRECTUS_TOKEN;
+    const directusUrl = process.env.DIRECTUS_URL || process.env.PUBLIC_URL;
+    const directusToken = process.env.DIRECTUS_TOKEN;
 
-    // if (!directusUrl) {
-    //   throw new Error('Missing DIRECTUS_URL or PUBLIC_URL environment variable');
-    // }
-    // if (!directusToken) {
-    //   throw new Error('Missing DIRECTUS_TOKEN environment variable – cannot sync configuration');
-    // }
+    if (!directusUrl) {
+      throw new Error('Missing DIRECTUS_URL or PUBLIC_URL environment variable');
+    }
+    if (!directusToken) {
+      throw new Error('Missing DIRECTUS_TOKEN environment variable – cannot sync configuration');
+    }
 
-    // log(`Using Directus URL: ${directusUrl}`);
-    // log(`Token is present (length: ${directusToken.length})`);
+    log(`Using Directus URL: ${directusUrl}`);
+    log(`Token is present (length: ${directusToken.length})`);
 
-    // const syncCommand = `npx directus-sync push --directus-url "${directusUrl}" --directus-token "${directusToken}"`;
+    const syncCommand = `npx directus-sync push --directus-url "${directusUrl}" --directus-token "${directusToken}"`;
 
-    // log(`Executing: ${syncCommand.replace(directusToken, '***')}`); // hide token in logs
+    log(`Executing: ${syncCommand.replace(directusToken, '***')}`); // hide token in logs
 
-    // await execAsync(syncCommand, { stdio: 'inherit' });
-    // log('Configuration sync completed successfully');
+    await execAsync(syncCommand, { stdio: 'inherit' });
+    log('Configuration sync completed successfully');
 
-    // log('Startup complete – Directus should now be fully ready');
-    // log(`Admin panel: ${directusUrl}/admin`);
+    log('Startup complete – Directus should now be fully ready');
+    log(`Admin panel: ${directusUrl}/admin`);
 
   } catch (error) {
     errorLog('Startup sequence failed', error);
