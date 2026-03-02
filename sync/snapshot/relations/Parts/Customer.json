@@ -1,0 +1,25 @@
+{
+  "collection": "Parts",
+  "field": "Customer",
+  "related_collection": "Customers",
+  "meta": {
+    "junction_field": null,
+    "many_collection": "Parts",
+    "many_field": "Customer",
+    "one_allowed_collections": null,
+    "one_collection": "Customers",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": "Parts",
+    "sort_field": null
+  },
+  "schema": {
+    "table": "Parts",
+    "column": "Customer",
+    "foreign_key_table": "Customers",
+    "foreign_key_column": "id",
+    "constraint_name": "parts_customer_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "SET NULL"
+  }
+}

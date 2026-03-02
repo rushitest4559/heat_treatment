@@ -44,9 +44,9 @@ async function main() {
     // log('Bootstrap completed');
 
     // 2. Apply schema snapshot
-    // log('Applying schema snapshot from ./snapshot.yaml');
-    // await execAsync('npx directus schema apply ./snapshot.yaml --yes');
-    // log('Schema applied successfully');
+    log('Applying schema snapshot from ./snapshot.yaml');
+    await execAsync('npx directus schema apply ./snapshot.yaml --yes');
+    log('Schema applied successfully');
 
     // 3. Start Directus server in background
     log('Starting Directus server in background...');

@@ -3,20 +3,56 @@ type Query {
   directus_sync_id_map_by_id(id: ID!, version: String): directus_sync_id_map
   directus_sync_id_map_aggregated(groupBy: [String], filter: directus_sync_id_map_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_sync_id_map_aggregated!]!
   directus_sync_id_map_by_version(version: String!, id: ID!): version_directus_sync_id_map
+  Customers(filter: Customers_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Customers!]!
+  Customers_by_id(id: ID!, version: String): Customers
+  Customers_aggregated(groupBy: [String], filter: Customers_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [Customers_aggregated!]!
+  Customers_by_version(version: String!, id: ID!): version_Customers
+  Parts(filter: Parts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Parts!]!
+  Parts_by_id(id: ID!, version: String): Parts
+  Parts_aggregated(groupBy: [String], filter: Parts_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [Parts_aggregated!]!
+  Parts_by_version(version: String!, id: ID!): version_Parts
+  Parts_files(filter: Parts_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Parts_files!]!
+  Parts_files_by_id(id: ID!, version: String): Parts_files
+  Parts_files_aggregated(groupBy: [String], filter: Parts_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [Parts_files_aggregated!]!
+  Parts_files_by_version(version: String!, id: ID!): version_Parts_files
 }
 
 type Mutation {
   create_directus_sync_id_map_items(filter: directus_sync_id_map_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_directus_sync_id_map_input!]): [directus_sync_id_map!]!
   create_directus_sync_id_map_item(data: create_directus_sync_id_map_input!): directus_sync_id_map
+  create_Customers_items(filter: Customers_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_Customers_input!]): [Customers!]!
+  create_Customers_item(data: create_Customers_input!): Customers
+  create_Parts_items(filter: Parts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_Parts_input!]): [Parts!]!
+  create_Parts_item(data: create_Parts_input!): Parts
+  create_Parts_files_items(filter: Parts_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_Parts_files_input!]): [Parts_files!]!
+  create_Parts_files_item(data: create_Parts_files_input!): Parts_files
   update_directus_sync_id_map_items(filter: directus_sync_id_map_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_directus_sync_id_map_input!): [directus_sync_id_map!]!
   update_directus_sync_id_map_batch(filter: directus_sync_id_map_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_directus_sync_id_map_input!]): [directus_sync_id_map!]!
   update_directus_sync_id_map_item(id: ID!, data: update_directus_sync_id_map_input!): directus_sync_id_map
+  update_Customers_items(filter: Customers_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_Customers_input!): [Customers!]!
+  update_Customers_batch(filter: Customers_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_Customers_input!]): [Customers!]!
+  update_Customers_item(id: ID!, data: update_Customers_input!): Customers
+  update_Parts_items(filter: Parts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_Parts_input!): [Parts!]!
+  update_Parts_batch(filter: Parts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_Parts_input!]): [Parts!]!
+  update_Parts_item(id: ID!, data: update_Parts_input!): Parts
+  update_Parts_files_items(filter: Parts_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_Parts_files_input!): [Parts_files!]!
+  update_Parts_files_batch(filter: Parts_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_Parts_files_input!]): [Parts_files!]!
+  update_Parts_files_item(id: ID!, data: update_Parts_files_input!): Parts_files
   delete_directus_sync_id_map_items(ids: [ID]!): delete_many
   delete_directus_sync_id_map_item(id: ID!): delete_one
+  delete_Customers_items(ids: [ID]!): delete_many
+  delete_Customers_item(id: ID!): delete_one
+  delete_Parts_items(ids: [ID]!): delete_many
+  delete_Parts_item(id: ID!): delete_one
+  delete_Parts_files_items(ids: [ID]!): delete_many
+  delete_Parts_files_item(id: ID!): delete_one
 }
 
 type Subscription {
   directus_sync_id_map_mutated(event: EventEnum): directus_sync_id_map_mutated
+  Customers_mutated(event: EventEnum): Customers_mutated
+  Parts_mutated(event: EventEnum): Parts_mutated
+  Parts_files_mutated(event: EventEnum): Parts_files_mutated
   directus_users_mutated(event: EventEnum): directus_users_mutated
   directus_activity_mutated(event: EventEnum): directus_activity_mutated
   directus_files_mutated(event: EventEnum): directus_files_mutated
@@ -90,6 +126,56 @@ enum EventEnum {
 
 type count_functions {
   count: Int
+}
+
+type Customers {
+  id: ID!
+  status: String
+  sort: Int
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  Name: String
+  Parts(filter: Parts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Parts]
+  Parts_func: count_functions
+}
+
+type Customers_aggregated {
+  group: JSON
+  countAll: Int
+  count: Customers_aggregated_count
+  countDistinct: Customers_aggregated_count
+  avg: Customers_aggregated_fields
+  sum: Customers_aggregated_fields
+  avgDistinct: Customers_aggregated_fields
+  sumDistinct: Customers_aggregated_fields
+  min: Customers_aggregated_fields
+  max: Customers_aggregated_fields
+}
+
+type Customers_aggregated_count {
+  id: Int
+  status: Int
+  sort: Int
+  user_created: Int
+  date_created: Int
+  user_updated: Int
+  date_updated: Int
+  Name: Int
+  Parts: Int
+}
+
+type Customers_aggregated_fields {
+  sort: Float
+}
+
+type Customers_mutated {
+  key: ID!
+  event: EventEnum
+  data: Customers
 }
 
 type datetime_functions {
@@ -745,6 +831,153 @@ type directus_versions_mutated {
   data: directus_versions
 }
 
+type Parts {
+  id: ID!
+  status: String
+  sort: Int
+  user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_created: Date
+  date_created_func: datetime_functions
+  user_updated(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
+  date_updated: Date
+  date_updated_func: datetime_functions
+  Part_Name: String
+  Part_Number: String
+  Material: String
+  Weight: Float
+  Customer(filter: Customers_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Customers
+  Process_Name: String
+  Process_Loading: String
+  Process_Pasting: Boolean
+  Process_Pattern_No: Int
+  Process_Shot_Blasting: Boolean
+  Process_Punching: Boolean
+  Tempering_Temperature: Int
+  Tempering_Time: Int
+  Inspection_Case_Depth: String
+  Inspection_Checking_Location: String
+  Inspection_Cut_Off_Value: String
+  Inspection_Core_Hardness: String
+  Inspection_Surface_Hardness: String
+  Inspection_Microstructure: String
+  Furnace_Capacity: Int
+  Batch_Qty: Int
+  Total_Part_Weight: Float
+  Part_Images(filter: Parts_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [Parts_files]
+  Part_Images_func: count_functions
+}
+
+type Parts_aggregated {
+  group: JSON
+  countAll: Int
+  count: Parts_aggregated_count
+  countDistinct: Parts_aggregated_count
+  avg: Parts_aggregated_fields
+  sum: Parts_aggregated_fields
+  avgDistinct: Parts_aggregated_fields
+  sumDistinct: Parts_aggregated_fields
+  min: Parts_aggregated_fields
+  max: Parts_aggregated_fields
+}
+
+type Parts_aggregated_count {
+  id: Int
+  status: Int
+  sort: Int
+  user_created: Int
+  date_created: Int
+  user_updated: Int
+  date_updated: Int
+  Part_Name: Int
+  Part_Number: Int
+  Material: Int
+  Weight: Int
+  Customer: Int
+  Process_Name: Int
+  Process_Loading: Int
+  Process_Pasting: Int
+  Process_Pattern_No: Int
+  Process_Shot_Blasting: Int
+  Process_Punching: Int
+  Tempering_Temperature: Int
+  Tempering_Time: Int
+  Inspection_Case_Depth: Int
+  Inspection_Checking_Location: Int
+  Inspection_Cut_Off_Value: Int
+  Inspection_Core_Hardness: Int
+  Inspection_Surface_Hardness: Int
+  Inspection_Microstructure: Int
+  Furnace_Capacity: Int
+  Batch_Qty: Int
+  Total_Part_Weight: Int
+  Part_Images: Int
+}
+
+type Parts_aggregated_fields {
+  sort: Float
+  Weight: Float
+  Process_Pattern_No: Float
+  Tempering_Temperature: Float
+  Tempering_Time: Float
+  Furnace_Capacity: Float
+  Batch_Qty: Float
+  Total_Part_Weight: Float
+}
+
+type Parts_files {
+  id: ID!
+  Parts_id(filter: Parts_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): Parts
+  directus_files_id(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
+}
+
+type Parts_files_aggregated {
+  group: JSON
+  countAll: Int
+  count: Parts_files_aggregated_count
+  countDistinct: Parts_files_aggregated_count
+  avg: Parts_files_aggregated_fields
+  sum: Parts_files_aggregated_fields
+  avgDistinct: Parts_files_aggregated_fields
+  sumDistinct: Parts_files_aggregated_fields
+  min: Parts_files_aggregated_fields
+  max: Parts_files_aggregated_fields
+}
+
+type Parts_files_aggregated_count {
+  id: Int
+  Parts_id: Int
+  directus_files_id: Int
+}
+
+type Parts_files_aggregated_fields {
+  id: Float
+}
+
+type Parts_files_mutated {
+  key: ID!
+  event: EventEnum
+  data: Parts_files
+}
+
+type Parts_mutated {
+  key: ID!
+  event: EventEnum
+  data: Parts
+}
+
+""""""
+type version_Customers {
+  id: ID
+  status: String
+  sort: Int
+  user_created: JSON
+  date_created: Date
+  user_updated: JSON
+  date_updated: Date
+  Name: String
+  Parts: JSON
+}
+
 """"""
 type version_directus_sync_id_map {
   id: ID
@@ -752,6 +985,47 @@ type version_directus_sync_id_map {
   sync_id: String
   local_id: String
   created_at: Date
+}
+
+""""""
+type version_Parts {
+  id: ID
+  status: String
+  sort: Int
+  user_created: JSON
+  date_created: Date
+  user_updated: JSON
+  date_updated: Date
+  Part_Name: String
+  Part_Number: String
+  Material: String
+  Weight: Float
+  Customer: JSON
+  Process_Name: String
+  Process_Loading: String
+  Process_Pasting: Boolean
+  Process_Pattern_No: Int
+  Process_Shot_Blasting: Boolean
+  Process_Punching: Boolean
+  Tempering_Temperature: Int
+  Tempering_Time: Int
+  Inspection_Case_Depth: String
+  Inspection_Checking_Location: String
+  Inspection_Cut_Off_Value: String
+  Inspection_Core_Hardness: String
+  Inspection_Surface_Hardness: String
+  Inspection_Microstructure: String
+  Furnace_Capacity: Int
+  Batch_Qty: Int
+  Total_Part_Weight: Float
+  Part_Images: JSON
+}
+
+""""""
+type version_Parts_files {
+  id: ID
+  Parts_id: JSON
+  directus_files_id: JSON
 }
 
 input big_int_filter_operators {
@@ -780,12 +1054,192 @@ input count_function_filter_operators {
   count: number_filter_operators
 }
 
+input create_Customers_input {
+  id: ID
+  status: String
+  sort: Int
+  user_created: create_directus_users_input
+  date_created: Date
+  user_updated: create_directus_users_input
+  date_updated: Date
+  Name: String
+  Parts: [create_Parts_input]
+}
+
+input create_directus_access_input {
+  id: ID
+  role: create_directus_roles_input
+  user: create_directus_users_input
+  policy: create_directus_policies_input
+  sort: Int
+}
+
+input create_directus_files_input {
+  id: ID
+  storage: String!
+  filename_disk: String
+  filename_download: String!
+  title: String
+  type: String
+  folder: create_directus_folders_input
+  uploaded_by: create_directus_users_input
+  created_on: Date
+  modified_by: create_directus_users_input
+  modified_on: Date
+  charset: String
+  filesize: GraphQLBigInt
+  width: Int
+  height: Int
+  duration: Int
+  embed: String
+  description: String
+  location: String
+  tags: JSON
+  metadata: JSON
+  focal_point_x: Int
+  focal_point_y: Int
+  tus_id: String
+  tus_data: JSON
+  uploaded_on: Date
+}
+
+input create_directus_folders_input {
+  id: ID
+  name: String!
+  parent: create_directus_folders_input
+}
+
+input create_directus_permissions_input {
+  id: ID
+  collection: String!
+  action: String!
+  permissions: JSON
+  validation: JSON
+  presets: JSON
+  fields: [String]
+  policy: create_directus_policies_input
+}
+
+input create_directus_policies_input {
+  id: ID
+  name: String!
+  icon: String
+  description: String
+  ip_access: [String]
+
+  """$t:field_options.directus_policies.enforce_tfa"""
+  enforce_tfa: Boolean!
+  admin_access: Boolean!
+  app_access: Boolean!
+  permissions: [create_directus_permissions_input]
+  users: [create_directus_access_input]
+  roles: [create_directus_access_input]
+}
+
+input create_directus_roles_input {
+  id: ID
+  name: String!
+  icon: String
+  description: String
+  parent: create_directus_roles_input
+  children: [create_directus_roles_input]
+  policies: [create_directus_access_input]
+  users: [create_directus_users_input]
+}
+
 input create_directus_sync_id_map_input {
   id: ID
   table: String!
   sync_id: String!
   local_id: String!
   created_at: Date
+}
+
+input create_directus_users_input {
+  id: ID
+  first_name: String
+  last_name: String
+  email: String
+  password: Hash
+  location: String
+  title: String
+  description: String
+  tags: JSON
+  avatar: create_directus_files_input
+  language: String
+  tfa_secret: Hash
+  status: String
+  role: create_directus_roles_input
+  token: Hash
+  last_access: Date
+  last_page: String
+  provider: String
+  external_identifier: String
+  auth_data: JSON
+  email_notifications: Boolean
+  appearance: String
+  theme_dark: String
+  theme_light: String
+  theme_light_overrides: JSON
+  theme_dark_overrides: JSON
+  text_direction: String
+  policies: [create_directus_access_input]
+}
+
+input create_Parts_files_input {
+  id: ID
+  Parts_id: create_Parts_input
+  directus_files_id: create_directus_files_input
+}
+
+input create_Parts_input {
+  id: ID
+  status: String
+  sort: Int
+  user_created: create_directus_users_input
+  date_created: Date
+  user_updated: create_directus_users_input
+  date_updated: Date
+  Part_Name: String
+  Part_Number: String
+  Material: String
+  Weight: Float
+  Customer: create_Customers_input
+  Process_Name: String
+  Process_Loading: String
+  Process_Pasting: Boolean
+  Process_Pattern_No: Int
+  Process_Shot_Blasting: Boolean
+  Process_Punching: Boolean
+  Tempering_Temperature: Int
+  Tempering_Time: Int
+  Inspection_Case_Depth: String
+  Inspection_Checking_Location: String
+  Inspection_Cut_Off_Value: String
+  Inspection_Core_Hardness: String
+  Inspection_Surface_Hardness: String
+  Inspection_Microstructure: String
+  Furnace_Capacity: Int
+  Batch_Qty: Int
+  Total_Part_Weight: Float
+  Part_Images: [create_Parts_files_input]
+}
+
+input Customers_filter {
+  id: id_filter_operators
+  status: string_filter_operators
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  Name: string_filter_operators
+  Parts: Parts_quantifier_filter
+  Parts_func: count_function_filter_operators
+  _and: [Customers_filter]
+  _or: [Customers_filter]
 }
 
 input date_filter_operators {
@@ -1373,6 +1827,104 @@ input number_filter_operators {
   _nbetween: [GraphQLStringOrFloat]
 }
 
+input Parts_files_filter {
+  id: number_filter_operators
+  Parts_id: Parts_filter
+  directus_files_id: directus_files_filter
+  _and: [Parts_files_filter]
+  _or: [Parts_files_filter]
+}
+
+""""""
+input Parts_files_quantifier_filter {
+  id: number_filter_operators
+  Parts_id: Parts_filter
+  directus_files_id: directus_files_filter
+  _and: [Parts_files_filter]
+  _or: [Parts_files_filter]
+  _some: Parts_files_filter
+  _none: Parts_files_filter
+}
+
+input Parts_filter {
+  id: id_filter_operators
+  status: string_filter_operators
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  Part_Name: string_filter_operators
+  Part_Number: string_filter_operators
+  Material: string_filter_operators
+  Weight: number_filter_operators
+  Customer: Customers_filter
+  Process_Name: string_filter_operators
+  Process_Loading: string_filter_operators
+  Process_Pasting: boolean_filter_operators
+  Process_Pattern_No: number_filter_operators
+  Process_Shot_Blasting: boolean_filter_operators
+  Process_Punching: boolean_filter_operators
+  Tempering_Temperature: number_filter_operators
+  Tempering_Time: number_filter_operators
+  Inspection_Case_Depth: string_filter_operators
+  Inspection_Checking_Location: string_filter_operators
+  Inspection_Cut_Off_Value: string_filter_operators
+  Inspection_Core_Hardness: string_filter_operators
+  Inspection_Surface_Hardness: string_filter_operators
+  Inspection_Microstructure: string_filter_operators
+  Furnace_Capacity: number_filter_operators
+  Batch_Qty: number_filter_operators
+  Total_Part_Weight: number_filter_operators
+  Part_Images: Parts_files_quantifier_filter
+  Part_Images_func: count_function_filter_operators
+  _and: [Parts_filter]
+  _or: [Parts_filter]
+}
+
+""""""
+input Parts_quantifier_filter {
+  id: id_filter_operators
+  status: string_filter_operators
+  sort: number_filter_operators
+  user_created: directus_users_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  user_updated: directus_users_filter
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  Part_Name: string_filter_operators
+  Part_Number: string_filter_operators
+  Material: string_filter_operators
+  Weight: number_filter_operators
+  Customer: Customers_filter
+  Process_Name: string_filter_operators
+  Process_Loading: string_filter_operators
+  Process_Pasting: boolean_filter_operators
+  Process_Pattern_No: number_filter_operators
+  Process_Shot_Blasting: boolean_filter_operators
+  Process_Punching: boolean_filter_operators
+  Tempering_Temperature: number_filter_operators
+  Tempering_Time: number_filter_operators
+  Inspection_Case_Depth: string_filter_operators
+  Inspection_Checking_Location: string_filter_operators
+  Inspection_Cut_Off_Value: string_filter_operators
+  Inspection_Core_Hardness: string_filter_operators
+  Inspection_Surface_Hardness: string_filter_operators
+  Inspection_Microstructure: string_filter_operators
+  Furnace_Capacity: number_filter_operators
+  Batch_Qty: number_filter_operators
+  Total_Part_Weight: number_filter_operators
+  Part_Images: Parts_files_quantifier_filter
+  Part_Images_func: count_function_filter_operators
+  _and: [Parts_filter]
+  _or: [Parts_filter]
+  _some: Parts_filter
+  _none: Parts_filter
+}
+
 input string_filter_operators {
   _eq: String
   _neq: String
@@ -1395,10 +1947,173 @@ input string_filter_operators {
   _nempty: Boolean
 }
 
+input update_Customers_input {
+  id: ID
+  status: String
+  sort: Int
+  user_created: update_directus_users_input
+  date_created: Date
+  user_updated: update_directus_users_input
+  date_updated: Date
+  Name: String
+  Parts: [update_Parts_input]
+}
+
+input update_directus_access_input {
+  id: ID
+  role: update_directus_roles_input
+  user: update_directus_users_input
+  policy: update_directus_policies_input
+  sort: Int
+}
+
+input update_directus_files_input {
+  id: ID
+  storage: String
+  filename_disk: String
+  filename_download: String
+  title: String
+  type: String
+  folder: update_directus_folders_input
+  uploaded_by: update_directus_users_input
+  created_on: Date
+  modified_by: update_directus_users_input
+  modified_on: Date
+  charset: String
+  filesize: GraphQLBigInt
+  width: Int
+  height: Int
+  duration: Int
+  embed: String
+  description: String
+  location: String
+  tags: JSON
+  metadata: JSON
+  focal_point_x: Int
+  focal_point_y: Int
+  tus_id: String
+  tus_data: JSON
+  uploaded_on: Date
+}
+
+input update_directus_folders_input {
+  id: ID
+  name: String
+  parent: update_directus_folders_input
+}
+
+input update_directus_permissions_input {
+  id: ID
+  collection: String
+  action: String
+  permissions: JSON
+  validation: JSON
+  presets: JSON
+  fields: [String]
+  policy: update_directus_policies_input
+}
+
+input update_directus_policies_input {
+  id: ID
+  name: String
+  icon: String
+  description: String
+  ip_access: [String]
+
+  """$t:field_options.directus_policies.enforce_tfa"""
+  enforce_tfa: Boolean
+  admin_access: Boolean
+  app_access: Boolean
+  permissions: [update_directus_permissions_input]
+  users: [update_directus_access_input]
+  roles: [update_directus_access_input]
+}
+
+input update_directus_roles_input {
+  id: ID
+  name: String
+  icon: String
+  description: String
+  parent: update_directus_roles_input
+  children: [update_directus_roles_input]
+  policies: [update_directus_access_input]
+  users: [update_directus_users_input]
+}
+
 input update_directus_sync_id_map_input {
   id: ID
   table: String
   sync_id: String
   local_id: String
   created_at: Date
+}
+
+input update_directus_users_input {
+  id: ID
+  first_name: String
+  last_name: String
+  email: String
+  password: Hash
+  location: String
+  title: String
+  description: String
+  tags: JSON
+  avatar: update_directus_files_input
+  language: String
+  tfa_secret: Hash
+  status: String
+  role: update_directus_roles_input
+  token: Hash
+  last_access: Date
+  last_page: String
+  provider: String
+  external_identifier: String
+  auth_data: JSON
+  email_notifications: Boolean
+  appearance: String
+  theme_dark: String
+  theme_light: String
+  theme_light_overrides: JSON
+  theme_dark_overrides: JSON
+  text_direction: String
+  policies: [update_directus_access_input]
+}
+
+input update_Parts_files_input {
+  id: ID
+  Parts_id: update_Parts_input
+  directus_files_id: update_directus_files_input
+}
+
+input update_Parts_input {
+  id: ID
+  status: String
+  sort: Int
+  user_created: update_directus_users_input
+  date_created: Date
+  user_updated: update_directus_users_input
+  date_updated: Date
+  Part_Name: String
+  Part_Number: String
+  Material: String
+  Weight: Float
+  Customer: update_Customers_input
+  Process_Name: String
+  Process_Loading: String
+  Process_Pasting: Boolean
+  Process_Pattern_No: Int
+  Process_Shot_Blasting: Boolean
+  Process_Punching: Boolean
+  Tempering_Temperature: Int
+  Tempering_Time: Int
+  Inspection_Case_Depth: String
+  Inspection_Checking_Location: String
+  Inspection_Cut_Off_Value: String
+  Inspection_Core_Hardness: String
+  Inspection_Surface_Hardness: String
+  Inspection_Microstructure: String
+  Furnace_Capacity: Int
+  Batch_Qty: Int
+  Total_Part_Weight: Float
+  Part_Images: [update_Parts_files_input]
 }

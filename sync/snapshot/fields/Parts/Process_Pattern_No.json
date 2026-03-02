@@ -1,0 +1,47 @@
+{
+  "collection": "Parts",
+  "field": "Process_Pattern_No",
+  "type": "integer",
+  "meta": {
+    "collection": "Parts",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "Process_Pattern_No",
+    "group": null,
+    "hidden": false,
+    "interface": "input",
+    "note": null,
+    "options": {
+      "font": "monospace",
+      "placeholder": "1"
+    },
+    "readonly": false,
+    "required": true,
+    "searchable": false,
+    "sort": 16,
+    "special": null,
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "Process_Pattern_No",
+    "table": "Parts",
+    "data_type": "integer",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": 32,
+    "numeric_scale": 0,
+    "is_nullable": true,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}
