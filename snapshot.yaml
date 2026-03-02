@@ -781,7 +781,7 @@ fields:
       display: null
       display_options: null
       field: Part_Name
-      group: null
+      group: Main_Info
       hidden: false
       interface: input
       note: null
@@ -791,12 +791,12 @@ fields:
       readonly: false
       required: true
       searchable: true
-      sort: 8
+      sort: 1
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Part_Name
       table: Parts
@@ -823,7 +823,7 @@ fields:
       display: null
       display_options: null
       field: Part_Number
-      group: null
+      group: Main_Info
       hidden: false
       interface: input
       note: null
@@ -832,12 +832,12 @@ fields:
       readonly: false
       required: true
       searchable: true
-      sort: 9
+      sort: 2
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Part_Number
       table: Parts
@@ -864,7 +864,7 @@ fields:
       display: null
       display_options: null
       field: Material
-      group: null
+      group: Main_Info
       hidden: false
       interface: input
       note: null
@@ -873,12 +873,12 @@ fields:
       readonly: false
       required: true
       searchable: true
-      sort: 10
+      sort: 3
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Material
       table: Parts
@@ -905,7 +905,7 @@ fields:
       display: null
       display_options: null
       field: Weight
-      group: null
+      group: Main_Info
       hidden: false
       interface: input
       note: null
@@ -914,12 +914,12 @@ fields:
       readonly: false
       required: true
       searchable: true
-      sort: 11
+      sort: 4
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Weight
       table: Parts
@@ -955,7 +955,7 @@ fields:
       readonly: false
       required: true
       searchable: true
-      sort: 12
+      sort: 8
       special:
         - m2o
       translations: null
@@ -988,7 +988,7 @@ fields:
       display: null
       display_options: null
       field: Process_Name
-      group: null
+      group: Process_Details
       hidden: false
       interface: input
       note: null
@@ -997,12 +997,12 @@ fields:
       readonly: false
       required: true
       searchable: true
-      sort: 13
+      sort: 1
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Process_Name
       table: Parts
@@ -1029,7 +1029,7 @@ fields:
       display: null
       display_options: null
       field: Process_Loading
-      group: null
+      group: Process_Details
       hidden: false
       interface: input
       note: null
@@ -1038,12 +1038,12 @@ fields:
       readonly: false
       required: true
       searchable: true
-      sort: 14
+      sort: 4
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Process_Loading
       table: Parts
@@ -1070,7 +1070,7 @@ fields:
       display: null
       display_options: null
       field: Process_Pasting
-      group: null
+      group: Process_Details
       hidden: false
       interface: boolean
       note: null
@@ -1078,13 +1078,13 @@ fields:
       readonly: false
       required: true
       searchable: true
-      sort: 15
+      sort: 6
       special:
         - cast-boolean
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Process_Pasting
       table: Parts
@@ -1111,7 +1111,7 @@ fields:
       display: null
       display_options: null
       field: Process_Pattern_No
-      group: null
+      group: Process_Details
       hidden: false
       interface: input
       note: null
@@ -1121,12 +1121,12 @@ fields:
       readonly: false
       required: true
       searchable: false
-      sort: 16
+      sort: 5
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Process_Pattern_No
       table: Parts
@@ -1153,7 +1153,7 @@ fields:
       display: null
       display_options: null
       field: Process_Shot_Blasting
-      group: null
+      group: Process_Details
       hidden: false
       interface: boolean
       note: null
@@ -1161,13 +1161,13 @@ fields:
       readonly: false
       required: true
       searchable: true
-      sort: 17
+      sort: 3
       special:
         - cast-boolean
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Process_Shot_Blasting
       table: Parts
@@ -1194,7 +1194,7 @@ fields:
       display: null
       display_options: null
       field: Process_Punching
-      group: null
+      group: Process_Details
       hidden: false
       interface: boolean
       note: null
@@ -1202,13 +1202,13 @@ fields:
       readonly: false
       required: true
       searchable: true
-      sort: 18
+      sort: 2
       special:
         - cast-boolean
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Process_Punching
       table: Parts
@@ -1235,7 +1235,7 @@ fields:
       display: null
       display_options: null
       field: Tempering_Temperature
-      group: null
+      group: Tempering_Info
       hidden: false
       interface: input
       note: null
@@ -1245,12 +1245,12 @@ fields:
       readonly: false
       required: true
       searchable: false
-      sort: 19
+      sort: 2
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Tempering_Temperature
       table: Parts
@@ -1277,7 +1277,7 @@ fields:
       display: null
       display_options: null
       field: Tempering_Time
-      group: null
+      group: Tempering_Info
       hidden: false
       interface: input
       note: null
@@ -1287,12 +1287,12 @@ fields:
       readonly: false
       required: true
       searchable: false
-      sort: 20
+      sort: 1
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Tempering_Time
       table: Parts
@@ -1319,7 +1319,7 @@ fields:
       display: null
       display_options: null
       field: Inspection_Case_Depth
-      group: null
+      group: Inspection_Details
       hidden: false
       interface: input
       note: null
@@ -1329,12 +1329,12 @@ fields:
       readonly: false
       required: true
       searchable: false
-      sort: 21
+      sort: 6
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Inspection_Case_Depth
       table: Parts
@@ -1361,7 +1361,7 @@ fields:
       display: null
       display_options: null
       field: Inspection_Checking_Location
-      group: null
+      group: Inspection_Details
       hidden: false
       interface: input
       note: null
@@ -1371,12 +1371,12 @@ fields:
       readonly: false
       required: true
       searchable: false
-      sort: 22
+      sort: 2
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Inspection_Checking_Location
       table: Parts
@@ -1403,7 +1403,7 @@ fields:
       display: null
       display_options: null
       field: Inspection_Cut_Off_Value
-      group: null
+      group: Inspection_Details
       hidden: false
       interface: input
       note: null
@@ -1413,12 +1413,12 @@ fields:
       readonly: false
       required: true
       searchable: false
-      sort: 23
+      sort: 3
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Inspection_Cut_Off_Value
       table: Parts
@@ -1445,7 +1445,7 @@ fields:
       display: null
       display_options: null
       field: Inspection_Core_Hardness
-      group: null
+      group: Inspection_Details
       hidden: false
       interface: input
       note: null
@@ -1455,12 +1455,12 @@ fields:
       readonly: false
       required: true
       searchable: false
-      sort: 24
+      sort: 1
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Inspection_Core_Hardness
       table: Parts
@@ -1487,7 +1487,7 @@ fields:
       display: null
       display_options: null
       field: Inspection_Surface_Hardness
-      group: null
+      group: Inspection_Details
       hidden: false
       interface: input
       note: null
@@ -1497,12 +1497,12 @@ fields:
       readonly: false
       required: true
       searchable: false
-      sort: 25
+      sort: 5
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Inspection_Surface_Hardness
       table: Parts
@@ -1529,7 +1529,7 @@ fields:
       display: null
       display_options: null
       field: Inspection_Microstructure
-      group: null
+      group: Inspection_Details
       hidden: false
       interface: input
       note: null
@@ -1539,12 +1539,12 @@ fields:
       readonly: false
       required: true
       searchable: false
-      sort: 26
+      sort: 4
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Inspection_Microstructure
       table: Parts
@@ -1571,7 +1571,7 @@ fields:
       display: null
       display_options: null
       field: Furnace_Capacity
-      group: null
+      group: Charge_Info
       hidden: false
       interface: input
       note: null
@@ -1581,12 +1581,12 @@ fields:
       readonly: false
       required: true
       searchable: false
-      sort: 27
+      sort: 2
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Furnace_Capacity
       table: Parts
@@ -1613,7 +1613,7 @@ fields:
       display: null
       display_options: null
       field: Batch_Qty
-      group: null
+      group: Charge_Info
       hidden: false
       interface: input
       note: null
@@ -1623,12 +1623,12 @@ fields:
       readonly: false
       required: true
       searchable: false
-      sort: 28
+      sort: 1
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: Batch_Qty
       table: Parts
@@ -1655,7 +1655,7 @@ fields:
       display: null
       display_options: null
       field: Total_Part_Weight
-      group: null
+      group: Charge_Info
       hidden: false
       interface: input
       note: null
@@ -1664,12 +1664,12 @@ fields:
       readonly: false
       required: true
       searchable: false
-      sort: 29
+      sort: 3
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: full
+      width: fill
     schema:
       name: Total_Part_Weight
       table: Parts
@@ -1705,9 +1705,139 @@ fields:
       readonly: false
       required: false
       searchable: true
-      sort: 30
+      sort: 14
       special:
         - files
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: Parts
+    field: Main_Info
+    type: alias
+    meta:
+      collection: Parts
+      conditions: null
+      display: null
+      display_options: null
+      field: Main_Info
+      group: null
+      hidden: false
+      interface: group-detail
+      note: null
+      options: null
+      readonly: false
+      required: false
+      searchable: true
+      sort: 9
+      special:
+        - alias
+        - no-data
+        - group
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: Parts
+    field: Inspection_Details
+    type: alias
+    meta:
+      collection: Parts
+      conditions: null
+      display: null
+      display_options: null
+      field: Inspection_Details
+      group: null
+      hidden: false
+      interface: group-detail
+      note: null
+      options: null
+      readonly: false
+      required: false
+      searchable: true
+      sort: 11
+      special:
+        - alias
+        - no-data
+        - group
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: Parts
+    field: Process_Details
+    type: alias
+    meta:
+      collection: Parts
+      conditions: null
+      display: null
+      display_options: null
+      field: Process_Details
+      group: null
+      hidden: false
+      interface: group-detail
+      note: null
+      options: null
+      readonly: false
+      required: false
+      searchable: true
+      sort: 10
+      special:
+        - alias
+        - no-data
+        - group
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: Parts
+    field: Tempering_Info
+    type: alias
+    meta:
+      collection: Parts
+      conditions: null
+      display: null
+      display_options: null
+      field: Tempering_Info
+      group: null
+      hidden: false
+      interface: group-detail
+      note: null
+      options: null
+      readonly: false
+      required: false
+      searchable: true
+      sort: 12
+      special:
+        - alias
+        - no-data
+        - group
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: Parts
+    field: Charge_Info
+    type: alias
+    meta:
+      collection: Parts
+      conditions: null
+      display: null
+      display_options: null
+      field: Charge_Info
+      group: null
+      hidden: false
+      interface: group-detail
+      note: null
+      options: null
+      readonly: false
+      required: false
+      searchable: true
+      sort: 13
+      special:
+        - alias
+        - no-data
+        - group
       translations: null
       validation: null
       validation_message: null

@@ -8,7 +8,7 @@
     "display": null,
     "display_options": null,
     "field": "Process_Loading",
-    "group": null,
+    "group": "Process_Details",
     "hidden": false,
     "interface": "input",
     "note": null,
@@ -18,12 +18,12 @@
     "readonly": false,
     "required": true,
     "searchable": true,
-    "sort": 14,
+    "sort": 4,
     "special": null,
     "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "full"
+    "width": "half"
   },
   "schema": {
     "name": "Process_Loading",

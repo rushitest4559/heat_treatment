@@ -8,7 +8,7 @@
     "display": null,
     "display_options": null,
     "field": "Inspection_Surface_Hardness",
-    "group": null,
+    "group": "Inspection_Details",
     "hidden": false,
     "interface": "input",
     "note": null,
@@ -19,12 +19,12 @@
     "readonly": false,
     "required": true,
     "searchable": false,
-    "sort": 25,
+    "sort": 5,
     "special": null,
     "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "full"
+    "width": "half"
   },
   "schema": {
     "name": "Inspection_Surface_Hardness",

@@ -8,7 +8,7 @@
     "display": null,
     "display_options": null,
     "field": "Process_Punching",
-    "group": null,
+    "group": "Process_Details",
     "hidden": false,
     "interface": "boolean",
     "note": null,
@@ -16,14 +16,14 @@
     "readonly": false,
     "required": true,
     "searchable": true,
-    "sort": 18,
+    "sort": 2,
     "special": [
       "cast-boolean"
     ],
     "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "full"
+    "width": "half"
   },
   "schema": {
     "name": "Process_Punching",

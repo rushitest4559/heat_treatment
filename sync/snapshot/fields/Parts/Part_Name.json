@@ -8,7 +8,7 @@
     "display": null,
     "display_options": null,
     "field": "Part_Name",
-    "group": null,
+    "group": "Main_Info",
     "hidden": false,
     "interface": "input",
     "note": null,
@@ -19,12 +19,12 @@
     "readonly": false,
     "required": true,
     "searchable": true,
-    "sort": 8,
+    "sort": 1,
     "special": null,
     "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "full"
+    "width": "half"
   },
   "schema": {
     "name": "Part_Name",

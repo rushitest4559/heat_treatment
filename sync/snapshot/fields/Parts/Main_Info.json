@@ -1,26 +1,26 @@
 {
   "collection": "Parts",
-  "field": "Part_Images",
+  "field": "Main_Info",
   "type": "alias",
   "meta": {
     "collection": "Parts",
     "conditions": null,
     "display": null,
     "display_options": null,
-    "field": "Part_Images",
+    "field": "Main_Info",
     "group": null,
     "hidden": false,
-    "interface": "files",
+    "interface": "group-detail",
     "note": null,
-    "options": {
-      "folder": "9a6e459d-22b4-46d1-9f5b-b1f789595578"
-    },
+    "options": null,
     "readonly": false,
     "required": false,
     "searchable": true,
-    "sort": 14,
+    "sort": 9,
     "special": [
-      "files"
+      "alias",
+      "no-data",
+      "group"
     ],
     "translations": null,
     "validation": null,

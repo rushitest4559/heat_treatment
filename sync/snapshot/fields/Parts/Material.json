@@ -8,7 +8,7 @@
     "display": null,
     "display_options": null,
     "field": "Material",
-    "group": null,
+    "group": "Main_Info",
     "hidden": false,
     "interface": "input",
     "note": null,
@@ -18,12 +18,12 @@
     "readonly": false,
     "required": true,
     "searchable": true,
-    "sort": 10,
+    "sort": 3,
     "special": null,
     "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "full"
+    "width": "half"
   },
   "schema": {
     "name": "Material",

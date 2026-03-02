@@ -8,7 +8,7 @@
     "display": null,
     "display_options": null,
     "field": "Inspection_Cut_Off_Value",
-    "group": null,
+    "group": "Inspection_Details",
     "hidden": false,
     "interface": "input",
     "note": null,
@@ -19,12 +19,12 @@
     "readonly": false,
     "required": true,
     "searchable": false,
-    "sort": 23,
+    "sort": 3,
     "special": null,
     "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "full"
+    "width": "half"
   },
   "schema": {
     "name": "Inspection_Cut_Off_Value",

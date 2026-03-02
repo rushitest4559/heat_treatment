@@ -8,7 +8,7 @@
     "display": null,
     "display_options": null,
     "field": "Batch_Qty",
-    "group": null,
+    "group": "Charge_Info",
     "hidden": false,
     "interface": "input",
     "note": null,
@@ -19,12 +19,12 @@
     "readonly": false,
     "required": true,
     "searchable": false,
-    "sort": 28,
+    "sort": 1,
     "special": null,
     "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "full"
+    "width": "half"
   },
   "schema": {
     "name": "Batch_Qty",
