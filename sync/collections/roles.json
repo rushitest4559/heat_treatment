@@ -7,10 +7,24 @@
     "_syncId": "_sync_default_admin_role"
   },
   {
+    "name": "Viewers",
+    "icon": "supervised_user_circle",
+    "description": null,
+    "parent": null,
+    "_syncId": "1d13ad3a-bb0d-4b45-91c8-a767df30e3f4"
+  },
+  {
     "name": "Administrator",
     "icon": "verified",
     "description": "$t:admin_description",
     "parent": null,
     "_syncId": "75ce65be-0ebd-4802-b89f-2ef24220bdb6"
+  },
+  {
+    "name": "Contributors",
+    "icon": "supervised_user_circle",
+    "description": null,
+    "parent": null,
+    "_syncId": "a698cbdf-1d5d-4247-a96f-6194d2c03ce6"
   }
 ]
