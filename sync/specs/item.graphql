@@ -130,7 +130,6 @@ type count_functions {
 
 type Customers {
   id: ID!
-  status: String
   sort: Int
   user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
@@ -158,7 +157,6 @@ type Customers_aggregated {
 
 type Customers_aggregated_count {
   id: Int
-  status: Int
   sort: Int
   user_created: Int
   date_created: Int
@@ -833,7 +831,6 @@ type directus_versions_mutated {
 
 type Parts {
   id: ID!
-  status: String
   sort: Int
   user_created(filter: directus_users_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_users
   date_created: Date
@@ -882,7 +879,6 @@ type Parts_aggregated {
 
 type Parts_aggregated_count {
   id: Int
-  status: Int
   sort: Int
   user_created: Int
   date_created: Int
@@ -968,7 +964,6 @@ type Parts_mutated {
 """"""
 type version_Customers {
   id: ID
-  status: String
   sort: Int
   user_created: JSON
   date_created: Date
@@ -990,7 +985,6 @@ type version_directus_sync_id_map {
 """"""
 type version_Parts {
   id: ID
-  status: String
   sort: Int
   user_created: JSON
   date_created: Date
@@ -1056,7 +1050,6 @@ input count_function_filter_operators {
 
 input create_Customers_input {
   id: ID
-  status: String
   sort: Int
   user_created: create_directus_users_input
   date_created: Date
@@ -1194,7 +1187,6 @@ input create_Parts_files_input {
 
 input create_Parts_input {
   id: ID
-  status: String
   sort: Int
   user_created: create_directus_users_input
   date_created: Date
@@ -1227,7 +1219,6 @@ input create_Parts_input {
 
 input Customers_filter {
   id: id_filter_operators
-  status: string_filter_operators
   sort: number_filter_operators
   user_created: directus_users_filter
   date_created: date_filter_operators
@@ -1848,7 +1839,6 @@ input Parts_files_quantifier_filter {
 
 input Parts_filter {
   id: id_filter_operators
-  status: string_filter_operators
   sort: number_filter_operators
   user_created: directus_users_filter
   date_created: date_filter_operators
@@ -1887,7 +1877,6 @@ input Parts_filter {
 """"""
 input Parts_quantifier_filter {
   id: id_filter_operators
-  status: string_filter_operators
   sort: number_filter_operators
   user_created: directus_users_filter
   date_created: date_filter_operators
@@ -1949,7 +1938,6 @@ input string_filter_operators {
 
 input update_Customers_input {
   id: ID
-  status: String
   sort: Int
   user_created: update_directus_users_input
   date_created: Date
@@ -2087,7 +2075,6 @@ input update_Parts_files_input {
 
 input update_Parts_input {
   id: ID
-  status: String
   sort: Int
   user_created: update_directus_users_input
   date_created: Date

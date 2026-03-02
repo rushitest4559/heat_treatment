@@ -3,7 +3,7 @@
   "meta": {
     "accountability": "all",
     "archive_app_filter": true,
-    "archive_field": "status",
+    "archive_field": null,
     "archive_value": "archived",
     "collapse": "open",
     "collection": "Parts",

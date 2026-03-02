@@ -12,7 +12,9 @@
     "hidden": false,
     "interface": "list-o2m",
     "note": null,
-    "options": null,
+    "options": {
+      "template": "{{Part_Name}}<->{{Part_Number}}"
+    },
     "readonly": false,
     "required": false,
     "searchable": true,

@@ -84,13 +84,7 @@ async function main() {
     log(`Using Directus URL: ${directusUrl}`);
     log(`Token is present (length: ${directusToken.length})`);
 
-    const syncCommand = [
-      'npx directus-sync push',
-      `--directus-url "${directusUrl}"`,
-      `--directus-token "${directusToken}"`,
-      `--dump-path "./sync"`,               // ← tell it where your committed dump is
-      `--only-collections settings,roles,permissions`  // optional but recommended to skip schema if not needed
-    ].join(' ');
+    const syncCommand = 'npx directus-sync push'
 
     log(`Executing: ${syncCommand.replace(directusToken, '***')}`); // hide token in logs
 
